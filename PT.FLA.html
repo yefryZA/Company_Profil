@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Farafa Lestari Abadi — Suplai Batu Split & Material Konstruksi</title>
+  <meta name="description" content="Mitra pengadaan dan distribusi batu split, screening, sirdam, dan batu scrop jalur darat & laut area Pulo Ampel - Bojonegara, Banten." />
+  <style>
+    :root {
+      --primary: #146338;       /* Hijau Korporat */
+      --primary-dark: #0e4728;
+      --accent: #78b833;        /* Hijau Aksen */
+      --dark: #111827;
+      --text: #374151;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== TOP BAR JAM BERDETAK ===== */
+    .topbar {
+      background: var(--primary-dark);
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .topbar-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .live-clock {
+      font-weight: 600;
+      color: #a7f3d0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 0;
+      gap: 12px;
+    }
+    .brand {
+      text-decoration: none;
+    }
+    .brand strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.15rem;
+      letter-spacing: 0.4px;
+      line-height: 1.2;
+    }
+    .brand span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    nav.desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav.desktop-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    nav.desktop-nav a:hover { color: var(--primary); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .menu-toggle {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--dark);
+      border-radius: 7px;
+      padding: 7px 11px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 12px 20px 16px;
+      gap: 10px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .mobile-nav-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 7px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: 0.2s;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline { background: var(--white); color: var(--primary); border-color: var(--primary); }
+    .btn-outline:hover { background: #ecfdf5; }
+    .btn-dark { background: var(--dark); color: var(--white); }
+    .btn-dark:hover { background: #1f2937; }
+    .btn-sm { padding: 7px 13px; font-size: 0.82rem; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #0e4728 0%, #146338 65%, #1e7e48 100%);
+      color: var(--white);
+      padding: 60px 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: 2.15rem;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      color: #e5e7eb;
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .hero-btns .btn-primary {
+      background: var(--accent);
+      color: #0b2e19;
+    }
+    .hero-btns .btn-primary:hover { background: #88ca3f; }
+    .hero-btns .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.5);
+    }
+    .hero-btns .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    .hero-card h3 {
+      font-size: 1rem;
+      margin-bottom: 14px;
+      color: #d1fae5;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 8px;
+    }
+    .stat-list { list-style: none; display: grid; gap: 12px; }
+    .stat-list li strong { display: block; font-size: 0.95rem; color: var(--white); }
+    .stat-list li span { font-size: 0.83rem; color: #d1d5db; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 56px 0; }
+    .section-alt { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-head { margin-bottom: 28px; }
+    .section-head small {
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-size: 0.78rem;
+    }
+    .section-head h2 {
+      font-size: 1.65rem;
+      color: var(--dark);
+      margin-top: 4px;
+    }
+    .section-head p { color: var(--muted); max-width: 680px; margin-top: 6px; }
+
+    /* ===== GRID & CARDS ===== */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    .card h3 { color: var(--dark); font-size: 1.08rem; margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: var(--text); }
+
+    /* ===== PRODUCT VIDEO CARDS ===== */
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .media-box {
+      width: 100%;
+      height: 195px;
+      background: #111827;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .media-box.clickable {
+      cursor: pointer;
+    }
+    .media-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      transition: transform 0.25s ease;
+    }
+    .media-box.clickable:hover video {
+      transform: scale(1.03);
+    }
+    .zoom-badge {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      background: rgba(17, 24, 39, 0.78);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      pointer-events: none;
+    }
+    .media-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+      color: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 12px;
+    }
+    .product-body { padding: 18px; flex: 1; }
+    .tag-size {
+      display: inline-block;
+      background: #ecfdf5;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+    }
+    .product-body h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 6px; }
+    .product-body p { font-size: 0.88rem; color: var(--muted); }
+    .product-foot {
+      padding: 12px 18px;
+      border-top: 1px solid var(--border);
+      background: #f9fafb;
+    }
+
+    /* ===== FORM ===== */
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-size: 0.92rem;
+      font-family: inherit;
+      background: var(--white);
+    }
+
+    /* ===== LOCKED LEGALITAS CARD ===== */
+    .lock-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .lock-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 14px;
+      background: #ecfdf5;
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      border: 1px solid #a7f3d0;
+    }
+    .lock-card h3 {
+      color: var(--dark);
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .lock-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+    .unlocked-box {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+    }
+    .unlocked-box.show { display: block; }
+
+    /* ===== MODAL (FULL VIDEO, PASSWORD & EMAIL) ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 24, 39, 0.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--white);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 440px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+    .video-modal-box {
+      background: #000000;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 900px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .video-modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #111827;
+      color: #ffffff;
+    }
+    .video-modal-head strong { font-size: 0.98rem; }
+    .close-modal-btn {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .close-modal-btn:hover { background: rgba(255,255,255,0.28); }
+    .video-modal-box video {
+      width: 100%;
+      max-height: 78vh;
+      display: block;
+      background: #000000;
+    }
+    .pw-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .pw-input-wrap input {
+      padding-right: 64px;
+    }
+    .toggle-pw {
+      position: absolute;
+      right: 10px;
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .error-msg {
+      color: #dc2626;
+      font-size: 0.83rem;
+      font-weight: 600;
+      margin-top: 6px;
+      display: none;
+    }
+    .email-actions-stack {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .copy-feedback {
+      display: none;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: #065f46;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: #d1d5db;
+      padding: 40px 0 24px;
+      font-size: 0.88rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #374151;
+    }
+    footer h4 { color: var(--white); margin-bottom: 10px; font-size: 1rem; }
+    .copyright { text-align: center; padding-top: 18px; color: #9ca3af; font-size: 0.82rem; }
+
+    /* ===== RESPONSIVE HP & TABLET ===== */
+    @media (max-width: 820px) {
+      .hero-grid, .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+      nav.desktop-nav, .nav-actions { display: none; }
+      .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .hero { padding: 42px 0; }
+      .hero h1 { font-size: 1.65rem; }
+      section { padding: 42px 0; }
+      .section-head h2 { font-size: 1.4rem; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .topbar-wrap { flex-direction: column; align-items: flex-start; gap: 2px; }
+      .brand strong { font-size: 1.02rem; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { width: 100%; }
+      .media-box { height: 210px; }
+    }
+
+    /* ===== PRINT / PDF COMPANY PROFILE MODE ===== */
+    @media print {
+      .topbar, header, .mobile-nav, .no-print, #kontak, .zoom-badge { display: none !important; }
+      body { background: #fff; font-size: 11pt; }
+      section { padding: 20px 0; }
+      .hero { padding: 28px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .card, .product-card, .lock-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= TOP BAR HARI, TANGGAL & JAM BERDETAK ================= -->
+  <div class="topbar">
+    <div class="container topbar-wrap">
+      <span>Area Operasional: Pulo Ampel – Bojonegara, Banten</span>
+      <span class="live-clock" id="jam-berdetak">Memuat waktu...</span>
+    </div>
+  </div>
+
+  <!-- ================= HEADER / NAVIGASI ================= -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <strong>PT. FARAFA LESTARI ABADI</strong>
+        <span>Tumbuh untuk Masa Depan</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#produk">Katalog Video</a>
+        <a href="#legalitas">&#128274; Legalitas</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button onclick="window.print()" class="btn btn-outline btn-sm" title="Simpan sebagai PDF Company Profile">Cetak / PDF</button>
+        <a href="#kontak" class="btn btn-primary btn-sm">Minta Penawaran</a>
+      </div>
+
+      <button type="button" class="menu-toggle" aria-label="Buka Menu" onclick="toggleMobileMenu()">&#9776;</button>
+    </div>
+
+    <!-- Menu Dinamis Khusus Layar HP -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#tentang" onclick="tutupMobileMenu()">Tentang Kami</a>
+      <a href="#produk" onclick="tutupMobileMenu()">Katalog Video Material</a>
+      <a href="#legalitas" onclick="tutupMobileMenu()">&#128274; Legalitas Perusahaan</a>
+      <div class="mobile-nav-btns">
+        <button onclick="tutupMobileMenu(); window.print();" class="btn btn-outline btn-sm">Cetak / PDF</button>
+        <a href="#kontak" onclick="tutupMobileMenu()" class="btn btn-primary btn-sm">Minta Penawaran</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Suplai Jalur Darat &amp; Laut • Banten</span>
+        <h1>Mitra Pengadaan &amp; Distribusi Batu Split dan Material Konstruksi</h1>
+        <p>
+          Melayani kebutuhan suplai agregat batu pecah dan material urugan berkualitas tinggi untuk proyek infrastruktur, batching plant, dan konstruksi umum melalui jalur darat maupun pengapalan laut.
+        </p>
+        <div class="hero-btns">
+          <a href="#kontak" class="btn btn-primary">Ajukan Permintaan Harga (RFQ)</a>
+          <a href="#produk" class="btn btn-outline">Lihat Video Material</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Keunggulan Rantai Pasok Kami</h3>
+        <ul class="stat-list">
+          <li>
+            <strong>Suplai Jalur Darat &amp; Laut</strong>
+            <span>Pengiriman armada Dump Truck (Franco Proyek) serta pemuatan Tongkang / LCT via pesisir Pulo Ampel – Bojonegara.</span>
+          </li>
+          <li>
+            <strong>Jaringan Quarry &amp; Crusher Mitra</strong>
+            <span>Akses langsung ke titik produksi material dengan gradasi ukuran fraksi yang konsisten dan siap muat.</span>
+          </li>
+          <li>
+            <strong>Badan Hukum Resmi &amp; Responsif</strong>
+            <span>Berbadan hukum Perseroan Terbatas (PT) dengan koordinasi langsung bersama manajemen pengambil keputusan.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TENTANG PERUSAHAAN ================= -->
+  <section id="tentang" class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <small>Profil Perusahaan</small>
+        <h2>Tentang PT. Farafa Lestari Abadi</h2>
+        <p>
+          PT. Farafa Lestari Abadi adalah perusahaan perdagangan besar material konstruksi (KBLI 46734) yang berkedudukan di Kota Cilegon dan beroperasi di koridor tambang strategis Pulo Ampel – Bojonegara, Banten.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Visi Perusahaan</h3>
+          <p>Menjadi mitra pengadaan dan distribusi material konstruksi yang terpercaya, tangguh, dan tumbuh berkelanjutan bersama pembangunan infrastruktur nasional.</p>
+        </div>
+        <div class="card">
+          <h3>Misi Perusahaan</h3>
+          <p>Menjamin ketersediaan stok material sesuai standar spesifikasi proyek, ketepatan jadwal armada darat maupun laut, serta transparansi administrasi kemitraan.</p>
+        </div>
+        <div class="card">
+          <h3>Skema Kerja Sama</h3>
+          <p>Melayani pembelian <strong>FOB Quarry</strong> (muat di lokasi crusher), <strong>Franco Proyek</strong> (terima di lokasi via Dump Truck), serta <strong>FOB Jetty / CIF</strong> untuk pengapalan antarpulau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KATALOG VIDEO MATERIAL ================= -->
+  <section id="produk">
+    <div class="container">
+      <div class="section-head">
+        <small>Katalog &amp; Dokumentasi Lapangan</small>
+        <h2>Material Agregat &amp; Urugan Tersedia</h2>
+        <p>Klik pada video material untuk melihat tampilan layar penuh (Full Video), atau klik tombol pesan untuk meminta penawaran.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- 1. Split 1-2 -->
+        <div class="product-card">
+          <div class="media-box clickable" onclick="bukaVideoFull('Split 1.2.mp4', 'Batu Split 1–2 (Fraksi 10 – 20 mm)')">
+            <video autoplay muted loop playsinline>
+              <source src="Split 1.2.mp4" type="video/mp4" />
+            </video>
+            <span class="zoom-badge">&#9974; Klik Video Full</span>
+          </div>
+          <div class="product-body">
+            <span class="tag-size">Fraksi 10 – 20 mm</span>
+            <h3>Batu Split 1–2</h3>
+            <p>Batu pecah bersih dan tajam. Standar utama campuran beton ready-mix (K-225 s/d K-500), precast, gedung bertingkat, dan jalan beton.</p>
+          </div>
+          <div class="product-foot">
+            <button class="btn btn-outline btn-sm" onclick="pilihMaterial('Batu Split 1-2')">Pesan Material Ini</button>
+          </div>
+        </div>
+
+        <!-- 2. Split 2-3 -->
+        <div class="product-card">
+          <div class="media-box clickable" onclick="bukaVideoFull('Split 2.3.mp4', 'Batu Split 2–3 (Fraksi 20 – 30 mm)')">
+            <video autoplay muted loop playsinline>
+              <source src="Split 2.3.mp4" type="video/mp4" />
+            </video>
+            <span class="zoom-badge">&#9974; Klik Video Full</span>
+          </div>
+          <div class="product-body">
+            <span class="tag-size">Fraksi 20 – 30 mm</span>
+            <h3>Batu Split 2–3</h3>
+            <p>Agregat kasar untuk pengecoran beton bertulang volume besar, lapisan perkerasan aspal (AC-BC / AC-Base), dan struktur pondasi.</p>
+          </div>
+          <div class="product-foot">
+            <button class="btn btn-outline btn-sm" onclick="pilihMaterial('Batu Split 2-3')">Pesan Material Ini</button>
+          </div>
+        </div>
+
+        <!-- 3. Split 3-5 -->
+        <div class="product-card">
+          <div class="media-box clickable" onclick="bukaVideoFull('Split 3.5.mp4', 'Batu Split 3–5 (Fraksi 30 – 50 mm)')">
+            <video autoplay muted loop playsinline>
+              <source src="Split 3.5.mp4" type="video/mp4" />
+            </video>
+            <span class="zoom-badge">&#9974; Klik Video Full</span>
+          </div>
+          <div class="product-body">
+            <span class="tag-size">Fraksi 30 – 50 mm</span>
+            <h3>Batu Split 3–5</h3>
+            <p>Agregat ukuran besar untuk lapisan pondasi bawah jalan raya, pemberat jalur rel kereta api (ballast), drainase, dan area dermaga.</p>
+          </div>
+          <div class="product-foot">
+            <button class="btn btn-outline btn-sm" onclick="pilihMaterial('Batu Split 3-5')">Pesan Material Ini</button>
+          </div>
+        </div>
+
+        <!-- 4. Split 5-7 -->
+        <div class="product-card">
+          <div class="media-box clickable" onclick="bukaVideoFull('Split 5.7.mp4', 'Batu Split 5–7 (Fraksi 50 – 70 mm)')">
+            <video autoplay muted loop playsinline>
+              <source src="Split 5.7.mp4" type="video/mp4" />
+            </video>
+            <span class="zoom-badge">&#9974; Klik Video Full</span>
+          </div>
+          <div class="product-body">
+            <span class="tag-size">Fraksi 50 – 70 mm</span>
+            <h3>Batu Split 5–7</h3>
+            <p>Batu pecah ukuran ekstra besar untuk pondasi konstruksi berat, penguatan tebing/tanggul, rip-rap, dan pelindung pesisir.</p>
+          </div>
+          <div class="product-foot">
+            <button class="btn btn-outline btn-sm" onclick="pilihMaterial('Batu Split 5-7')">Pesan Material Ini</button>
+          </div>
+        </div>
+
+        <!-- 5. Batu Screening -->
+        <div class="product-card">
+          <div class="media-box clickable" onclick="bukaVideoFull('Screning.mp4', 'Batu Screening (Fraksi 5 – 10 mm)')">
+            <video autoplay muted loop playsinline>
+              <source src="Screning.mp4" type="video/mp4" />
+            </video>
+            <span class="zoom-badge">&#9974; Klik Video Full</span>
+          </div>
+          <div class="product-body">
+            <span class="tag-size">Fraksi 5 – 10 mm</span>
+            <h3>Batu Screening</h3>
+            <p>Agregat halus hasil pemecahan batu crusher dengan ukuran seragam; ideal untuk campuran aspal hotmix (AMP), paving block, batako, dan precast.</p>
+          </div>
+          <div class="product-foot">
+            <button class="btn btn-outline btn-sm" onclick="pilihMaterial('Batu Screening')">Pesan Material Ini</button>
+          </div>
+        </div>
+
+        <!-- 6. Sirdam -->
+        <div class="product-card">
+          <div class="media-box clickable" onclick="bukaVideoFull('Sirdam.mp4', 'Sirdam / Pasir Batu (Urugan & Pemadatan)')">
+            <video autoplay muted loop playsinline>
+              <source src="Sirdam.mp4" type="video/mp4" />
+            </video>
+            <span class="zoom-badge">&#9974; Klik Video Full</span>
+          </div>
+          <div class="product-body">
+            <span class="tag-size">Urugan &amp; Pemadatan</span>
+            <h3>Sirdam (Pasir Batu)</h3>
+            <p>Material urugan pilihan dengan daya ikat dan pemadatan tinggi untuk land grading, timbunan kawasan pergudangan, dan sub-base jalan.</p>
+          </div>
+          <div class="product-foot">
+            <button class="btn btn-outline btn-sm" onclick="pilihMaterial('Sirdam')">Pesan Material Ini</button>
+          </div>
+        </div>
+
+        <!-- 7. Batu Scrop -->
+        <div class="product-card">
+          <div class="media-box">
+            <div class="media-placeholder">BATU SCROP / BATU BELAH<br />(Ukuran ± 15 – 30 cm)</div>
+          </div>
+          <div class="product-body">
+            <span class="tag-size">Ukuran ± 15 – 30 cm</span>
+            <h3>Batu Scrop / Batu Belah</h3>
+            <p>Batu bongkahan keras untuk pasangan pondasi bangunan, dinding penahan tanah (retaining wall), talud, dan konstruksi bronjong.</p>
+          </div>
+          <div class="product-foot">
+            <button class="btn btn-outline btn-sm" onclick="pilihMaterial('Batu Scrop')">Pesan Material Ini</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEGALITAS TERKUNCI PASSWORD (GOOGLE DRIVE) ================= -->
+  <section id="legalitas" class="section-alt">
+    <div class="container">
+      <div class="lock-card">
+        <div class="lock-icon" id="lock-status-icon" aria-hidden="true">&#128274;</div>
+        <h3>Dokumen Legalitas Perusahaan (Akses Terproteksi)</h3>
+        <p>
+          Demi keamanan data perusahaan, berkas legalitas resmi <strong>PT. Farafa Lestari Abadi</strong> (SK Kemenkumham, NPWP Badan, NIB, dan kelengkapan administrasi) dilindungi kata sandi khusus untuk verifikasi vendor dan mitra kerja.
+        </p>
+
+        <button type="button" class="btn btn-primary" onclick="bukaModalPassword()">
+          &#128274; Buka Folder Legalitas (Masukkan Password)
+        </button>
+
+        <div class="unlocked-box" id="unlocked-drive-box">
+          <p style="color: #065f46; font-weight: 600; margin-bottom: 10px; font-size: 0.9rem;">
+            &#9989; Akses Terverifikasi! Silakan klik tombol di bawah jika tab Google Drive tidak terbuka otomatis:
+          </p>
+          <a href="https://drive.google.com/drive/folders/1B81N4k9otoBq4g-4LDlwUjpqjZgncW_Z?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            Masuk ke Google Drive Legalitas
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FORMULIR RFQ WHATSAPP & EMAIL ================= -->
+  <section id="kontak" class="no-print">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <div class="section-head">
+            <small>Hubungi Kami</small>
+            <h2>Permintaan Penawaran Harga (RFQ)</h2>
+            <p>Isi detail kebutuhan material proyek Anda. Pesan otomatis terformat dan dapat langsung dikirim ke WhatsApp maupun Email resmi kami.</p>
+          </div>
+          <div class="card">
+            <p style="margin-bottom: 10px;"><strong>Kontak Resmi Perusahaan:</strong></p>
+            <p style="margin-bottom: 6px;">
+              WhatsApp / HP: <a href="https://wa.me/628164991986" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; text-decoration: none;">0816 499 1986</a>
+            </p>
+            <p style="margin-bottom: 6px;">
+              Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=farafalestariabadi@gmail.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; text-decoration: none;">farafalestariabadi@gmail.com</a>
+            </p>
+            <p>Lokasi Operasional: <strong>Pulo Ampel – Bojonegara, Banten</strong></p>
+          </div>
+        </div>
+
+        <form class="card" id="rfq-form" onsubmit="kirimWhatsApp(event)">
+          <div class="form-group">
+            <label for="rfq-nama">Nama Lengkap / Nama Perusahaan *</label>
+            <input type="text" id="rfq-nama" placeholder="Contoh: Bpk. Budi — PT Karya Konstruksi" required />
+          </div>
+          <div class="form-group">
+            <label for="rfq-material">Jenis Material *</label>
+            <input type="text" id="rfq-material" list="daftar-material" placeholder="Pilih atau ketik jenis material" required />
+            <datalist id="daftar-material">
+              <option value="Batu Split 1-2"></option>
+              <option value="Batu Split 2-3"></option>
+              <option value="Batu Split 3-5"></option>
+              <option value="Batu Split 5-7"></option>
+              <option value="Batu Screening"></option>
+              <option value="Sirdam"></option>
+              <option value="BaseCoarse A"></option>
+              <option value="BaseCoarse B"></option>
+              <option value="Batu Scrop"></option>
+            </datalist>
+          </div>
+          <div class="grid-2" style="gap: 12px;">
+            <div class="form-group">
+              <label for="rfq-volume">Estimasi Volume &amp; Skema Pajak *</label>
+              <input type="text" id="rfq-volume" placeholder="Contoh: 500 m3 (Plus PPN)" required />
+            </div>
+            <div class="form-group">
+              <label for="rfq-skema">Skema Pengiriman *</label>
+              <select id="rfq-skema">
+                <option value="Franco Lokasi Proyek (Darat)">Franco Lokasi Proyek (Darat)</option>
+                <option value="FOB Quarry / Ex-Stockpile">FOB ( Free On Board )</option>
+                <option value="FOB Jetty / Tongkang (Laut)">FOT ( Free On Truck )</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rfq-lokasi">Lokasi Tujuan Proyek / Pelabuhan Bongkar *</label>
+            <input type="text" id="rfq-lokasi" placeholder="Contoh: Kawasan Industri Cilegon / Jetty Bojonegara" required />
+          </div>
+
+          <div class="grid-2" style="gap: 10px; margin-top: 6px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim ke WhatsApp</button>
+            <button type="button" class="btn btn-dark" style="width: 100%;" onclick="bukaModalEmail()">Kirim via Email</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>PT. FARAFA LESTARI ABADI</h4>
+          <p>Mitra pengadaan dan distribusi batu split, screening, sirdam, dan batu scrop untuk kebutuhan proyek konstruksi darat maupun pengiriman laut.</p>
+        </div>
+        <div>
+          <h4>Alamat &amp; Kontak</h4>
+          <p>Link. Sawah Belgia No. 31, Pulomerak, Kota Cilegon, Banten 42439</p>
+          <p>HP / WA: 0816 499 1986 | Email: farafalestariabadi@gmail.com</p>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 PT. Farafa Lestari Abadi — Tumbuh untuk Masa Depan.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL FULL VIDEO PLAYER ================= -->
+  <div class="modal-overlay" id="video-modal" onclick="tutupVideoFull(event)">
+    <div class="video-modal-box" onclick="event.stopPropagation()">
+      <div class="video-modal-head">
+        <strong id="modal-video-title">Dokumentasi Material</strong>
+        <button type="button" class="close-modal-btn" onclick="tutupVideoFull()">&#10005; Tutup</button>
+      </div>
+      <video id="modal-video-player" controls playsinline></video>
+    </div>
+  </div>
+
+  <!-- ================= MODAL PASSWORD LEGALITAS ================= -->
+  <div class="modal-overlay" id="password-modal" onclick="tutupModalPassword(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <h3 style="color: var(--dark); margin-bottom: 6px;">&#128274; Verifikasi Akses Legalitas</h3>
+      <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 14px;">
+        Masukkan password perusahaan untuk membuka folder dokumen legalitas PT. Farafa Lestari Abadi.
+      </p>
+      <form onsubmit="verifikasiPassword(event)">
+        <div class="form-group">
+          <label for="input-pw-legalitas">Password</label>
+          <div class="pw-input-wrap">
+            <input type="password" id="input-pw-legalitas" placeholder="Masukkan password..." required />
+            <button type="button" class="toggle-pw" onclick="toggleLihatPw()">Lihat</button>
+          </div>
+          <div class="error-msg" id="pw-error">Password salah. Silakan periksa kembali.</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="tutupModalPassword()">Batal</button>
+          <button type="submit" class="btn btn-primary btn-sm">Buka Akses</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= MODAL PILIHAN KIRIM EMAIL ================= -->
+  <div class="modal-overlay" id="email-modal" onclick="tutupModalEmail()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <h3 style="color: var(--dark); margin-bottom: 6px;">&#9993; Kirim Penawaran via Email</h3>
+      <p style="font-size: 0.88rem; color: var(--muted);">
+        Tujuan: <strong>farafalestariabadi@gmail.com</strong><br />
+        Pilih cara membuka email sesuai perangkat yang Anda gunakan:
+      </p>
+
+      <div class="email-actions-stack">
+        <a id="btn-gmail-web" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="tutupModalEmail()">
+          Buka Gmail di Browser (Laptop / PC)
+        </a>
+        <a id="btn-mailto-app" href="#" class="btn btn-outline" onclick="tutupModalEmail()">
+          Buka Aplikasi Email (HP / Outlook)
+        </a>
+        <button type="button" class="btn btn-dark btn-sm" onclick="salinFormatEmail()">
+          Salin Teks Penawaran (Copy)
+        </button>
+        <div class="copy-feedback" id="copy-feedback">
+          &#9989; Teks penawaran &amp; alamat email berhasil disalin!
+        </div>
+        <button type="button" class="btn btn-outline btn-sm" style="border-color: #d1d5db; color: #4b5563;" onclick="tutupModalEmail()">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT INTERAKTIF ================= -->
+  <script>
+    // 1. Hari, Tanggal & Jam Berdetak Real-Time
+    function updateJam() {
+      const sekarang = new Date();
+      const daftarHari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+      const daftarBulan = [
+        'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+        'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+      ];
+
+      const hari = daftarHari[sekarang.getDay()];
+      const tgl = String(sekarang.getDate()).padStart(2, '0');
+      const bulan = daftarBulan[sekarang.getMonth()];
+      const tahun = sekarang.getFullYear();
+
+      const jam = String(sekarang.getHours()).padStart(2, '0');
+      const menit = String(sekarang.getMinutes()).padStart(2, '0');
+      const detik = String(sekarang.getSeconds()).padStart(2, '0');
+
+      document.getElementById('jam-berdetak').textContent =
+        `${hari}, ${tgl} ${bulan} ${tahun} • ${jam}:${menit}:${detik} WIB`;
+    }
+    updateJam();
+    setInterval(updateJam, 1000);
+
+    // 2. Navigasi Mobile Dinamis
+    function toggleMobileMenu() {
+      document.getElementById('mobile-nav').classList.toggle('open');
+    }
+    function tutupMobileMenu() {
+      document.getElementById('mobile-nav').classList.remove('open');
+    }
+
+    // 3. Video Material Full-Screen Modal
+    function bukaVideoFull(srcVideo, judul) {
+      const modal = document.getElementById('video-modal');
+      const player = document.getElementById('modal-video-player');
+      document.getElementById('modal-video-title').textContent = judul;
+      player.src = srcVideo;
+      modal.classList.add('active');
+      player.play().catch(() => {});
+    }
+
+    function tutupVideoFull() {
+      const modal = document.getElementById('video-modal');
+      const player = document.getElementById('modal-video-player');
+      player.pause();
+      player.removeAttribute('src');
+      player.load();
+      modal.classList.remove('active');
+    }
+
+    // 4. Proteksi Password Legalitas (FLA2026)
+    const DRIVE_URL = 'https://drive.google.com/drive/folders/1B81N4k9otoBq4g-4LDlwUjpqjZgncW_Z?usp=sharing';
+
+    function bukaModalPassword() {
+      const modal = document.getElementById('password-modal');
+      const input = document.getElementById('input-pw-legalitas');
+      document.getElementById('pw-error').style.display = 'none';
+      input.value = '';
+      modal.classList.add('active');
+      setTimeout(() => input.focus(), 100);
+    }
+
+    function tutupModalPassword() {
+      document.getElementById('password-modal').classList.remove('active');
+    }
+
+    function toggleLihatPw() {
+      const input = document.getElementById('input-pw-legalitas');
+      const btn = document.querySelector('.toggle-pw');
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.textContent = 'Tutup';
+      } else {
+        input.type = 'password';
+        btn.textContent = 'Lihat';
+      }
+    }
+
+    function verifikasiPassword(e) {
+      e.preventDefault();
+      const input = document.getElementById('input-pw-legalitas').value.trim();
+      if (input === 'FLA2026') {
+        tutupModalPassword();
+        document.getElementById('lock-status-icon').innerHTML = '&#128275;';
+        document.getElementById('unlocked-drive-box').classList.add('show');
+        window.open(DRIVE_URL, '_blank', 'noopener,noreferrer');
+      } else {
+        document.getElementById('pw-error').style.display = 'block';
+      }
+    }
+
+    // Tutup modal dengan tombol Esc
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        tutupVideoFull();
+        tutupModalPassword();
+        tutupModalEmail();
+      }
+    });
+
+    // 5. Pilih Material dari Katalog Video
+    function pilihMaterial(namaMaterial) {
+      document.getElementById('rfq-material').value = namaMaterial;
+      document.getElementById('kontak').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 6. Susun Pesan Penawaran (WhatsApp & Email)
+    function susunPesanPenawaran() {
+      const nama = document.getElementById('rfq-nama').value.trim();
+      const material = document.getElementById('rfq-material').value.trim();
+      const volume = document.getElementById('rfq-volume').value.trim();
+      const skema = document.getElementById('rfq-skema').value;
+      const lokasi = document.getElementById('rfq-lokasi').value.trim();
+
+      return (
+        `Halo PT. Farafa Lestari Abadi,\n\n` +
+        `Saya ingin meminta penawaran harga material dengan rincian berikut:\n` +
+        `• Nama / Perusahaan: ${nama}\n` +
+        `• Jenis Material: ${material}\n` +
+        `• Estimasi Volume & Pajak: ${volume}\n` +
+        `• Skema Pengiriman: ${skema}\n` +
+        `• Lokasi Tujuan: ${lokasi}\n\n` +
+        `Mohon informasi harga terbaik dan jadwal kesiapan suplai. Terima kasih.`
+      );
+    }
+
+    function kirimWhatsApp(e) {
+      e.preventDefault();
+      const pesan = susunPesanPenawaran();
+      window.open(`https://wa.me/628164991986?text=${encodeURIComponent(pesan)}`, '_blank');
+    }
+
+    function bukaModalEmail() {
+      const form = document.getElementById('rfq-form');
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      const nama = document.getElementById('rfq-nama').value.trim();
+      const material = document.getElementById('rfq-material').value.trim();
+      const emailTujuan = 'farafalestariabadi@gmail.com';
+      const subjek = `Permintaan Penawaran Harga (${material}) - ${nama}`;
+      const isi = susunPesanPenawaran();
+
+      // Link Gmail Web (untuk browser laptop/PC)
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailTujuan)}&su=${encodeURIComponent(subjek)}&body=${encodeURIComponent(isi)}`;
+      // Link Aplikasi Email Default (untuk HP / Outlook)
+      const mailtoUrl = `mailto:${emailTujuan}?subject=${encodeURIComponent(subjek)}&body=${encodeURIComponent(isi)}`;
+
+      document.getElementById('btn-gmail-web').href = gmailUrl;
+      document.getElementById('btn-mailto-app').href = mailtoUrl;
+      document.getElementById('copy-feedback').style.display = 'none';
+      document.getElementById('email-modal').classList.add('active');
+    }
+
+    function tutupModalEmail() {
+      document.getElementById('email-modal').classList.remove('active');
+    }
+
+    function salinFormatEmail() {
+      const nama = document.getElementById('rfq-nama').value.trim();
+      const material = document.getElementById('rfq-material').value.trim();
+      const teksLengkap =
+        `Kepada: farafalestariabadi@gmail.com\n` +
+        `Subjek: Permintaan Penawaran Harga (${material}) - ${nama}\n\n` +
+        susunPesanPenawaran();
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(teksLengkap).then(() => {
+          document.getElementById('copy-feedback').style.display = 'block';
+        }).catch(() => fallbackCopy(teksLengkap));
+      } else {
+        fallbackCopy(teksLengkap);
+      }
+    }
+
+    function fallbackCopy(teks) {
+      const ta = document.createElement('textarea');
+      ta.value = teks;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      document.getElementById('copy-feedback').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
