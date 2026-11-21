@@ -150,7 +150,7 @@
       font-variant-numeric: tabular-nums;
     }
 
-    /* ===== NAVBAR ===== */
+    /* ===== NAVBAR (CONTAINER PUTIH NAMA PT) ===== */
     header {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -162,7 +162,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 13px 0;
+      padding: 22px 0;
       gap: 12px;
     }
     .brand {
@@ -171,16 +171,16 @@
     .brand strong {
       display: block;
       color: var(--primary);
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       letter-spacing: 0.4px;
-      line-height: 1.2;
+      line-height: 1.25;
     }
     .brand span {
       display: block;
-      font-size: 0.8rem;
-      color: var(--accent);
+      font-size: 0.82rem;
+      color: #000000;
       font-weight: 600;
-      margin-top: 2px;
+      margin-top: 4px;
     }
     nav.desktop-nav {
       display: flex;
@@ -614,6 +614,7 @@
       .hero-grid, .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
       nav.desktop-nav, .nav-actions { display: none; }
       .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-wrap { padding: 18px 0; }
       .hero { padding: 42px 0; }
       .hero h1 { font-size: 1.65rem; }
       section { padding: 42px 0; }
@@ -623,7 +624,7 @@
     @media (max-width: 480px) {
       .container { padding: 0 16px; }
       .topbar-wrap { flex-direction: column; align-items: flex-start; gap: 2px; }
-      .brand strong { font-size: 1.02rem; }
+      .brand strong { font-size: 1.05rem; }
       .hero-btns { flex-direction: column; }
       .hero-btns .btn { width: 100%; }
       .media-box { height: 210px; }
@@ -649,7 +650,7 @@
         src="logo.png"
         alt="Logo PT. Farafa Lestari Abadi"
         class="welcome-logo"
-        onerror="this.outerHTML='<div style=\'margin-bottom:18px;\'><strong style=\'display:block;font-size:1.5rem;color:#146338;\'>PT. FARAFA LESTARI ABADI</strong><span style=\'color:#78b833;font-weight:600;\'>Tumbuh untuk Masa Depan</span></div>'"
+        onerror="this.outerHTML='<div style=\'margin-bottom:18px;\'><strong style=\'display:block;font-size:1.5rem;color:#146338;\'>PT. FARAFA LESTARI ABADI</strong><span style=\'color:#000000;font-weight:600;\'>Tumbuh untuk Masa Depan</span></div>'"
       />
       <div class="welcome-divider"></div>
       <p class="welcome-subtitle">
@@ -667,7 +668,7 @@
   <!-- ================= TOP BAR HARI, TANGGAL & JAM BERDETAK ================= -->
   <div class="topbar">
     <div class="container topbar-wrap">
-      <span>Area Operasional: Pulo Ampel – Bojonegara, Banten</span>
+      <span>Area Operasional : Pulo Ampel – Bojonegara Provinsi Banten</span>
       <span class="live-clock" id="jam-berdetak">Memuat waktu...</span>
     </div>
   </div>
@@ -720,8 +721,7 @@
           <a href="#produk" class="btn btn-outline">Lihat Video Material</a>
         </div>
       </div>
-
-      <div class="hero-card">
+<div class="hero-card">
         <h3>Keunggulan Rantai Pasok Kami</h3>
         <ul class="stat-list">
           <li>
@@ -730,7 +730,13 @@
           </li>
           <li>
             <strong>Jaringan Quarry &amp; Crusher Mitra</strong>
-            <span>Akses langsung ke titik produksi material dengan gradasi ukuran fraksi yang konsisten dan siap muat.</span>
+            <span>Akses langsung ke titik produksi material dengan gradasi ukuran fraksi yang konsisten dan siap muat melalui rekanan resmi:</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+              <span style="background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 5px;">PT. TRINATHA</span>
+              <span style="background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 5px;">PT. SJM</span>
+              <span style="background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 5px;">PT. ALDO</span>
+              <span style="background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 5px;">PT. SPW</span>
+            </div>
           </li>
           <li>
             <strong>Badan Hukum Resmi &amp; Responsif</strong>
@@ -763,7 +769,7 @@
         </div>
         <div class="card">
           <h3>Skema Kerja Sama</h3>
-          <p>Melayani pembelian <strong>FOB Quarry</strong> (muat di lokasi crusher), <strong>Franco Proyek</strong> (terima di lokasi via Dump Truck), serta <strong>FOB Jetty / CIF</strong> untuk pengapalan antarpulau.</p>
+          <p>Melayani pembelian <strong>FOB ( Free On Board )</strong> FOT ( Free On Truck ), <strong>FRANCO ( terima di lokasi via Dump Truck ).</p>
         </div>
       </div>
     </div>
@@ -905,7 +911,7 @@
     </div>
   </section>
 
-  <!-- ================= LEGALITAS TERKUNCI PASSWORD (GOOGLE DRIVE) ================= -->
+<!-- ================= LEGALITAS TERKUNCI PASSWORD (GOOGLE DRIVE) ================= -->
   <section id="legalitas" class="section-alt">
     <div class="container">
       <div class="lock-card">
@@ -918,15 +924,6 @@
         <button type="button" class="btn btn-primary" onclick="bukaModalPassword()">
           &#128274; Buka Folder Legalitas (Masukkan Password)
         </button>
-
-        <div class="unlocked-box" id="unlocked-drive-box">
-          <p style="color: #065f46; font-weight: 600; margin-bottom: 10px; font-size: 0.9rem;">
-            &#9989; Akses Terverifikasi! Silakan klik tombol di bawah jika tab Google Drive tidak terbuka otomatis:
-          </p>
-          <a href="https://drive.google.com/drive/folders/1B81N4k9otoBq4g-4LDlwUjpqjZgncW_Z?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-            Masuk ke Google Drive Legalitas
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -967,6 +964,8 @@
               <option value="Batu Split 3-5"></option>
               <option value="Batu Split 5-7"></option>
               <option value="Batu Screening"></option>
+              <option value="BaseCoarse A"></option>
+              <option value="BaseCoarse B"></option>
               <option value="Sirdam"></option>
               <option value="Batu Scrop"></option>
             </datalist>
@@ -979,14 +978,14 @@
             <div class="form-group">
               <label for="rfq-skema">Skema Pengiriman *</label>
               <select id="rfq-skema">
-                <option value="Franco Lokasi Proyek (Darat)">Franco Lokasi Proyek (Darat)</option>
-                <option value="FOB Quarry / Ex-Stockpile">FOB Quarry / Ex-Stockpile</option>
-                <option value="FOB Jetty / Tongkang (Laut)">FOB Jetty / Tongkang (Laut)</option>
+                <option value="Franco Lokasi Proyek (Darat)">FRANCO Lokasi Proyek ( Darat )</option>
+                <option value="FOB Quarry / Ex-Stockpile">FOB ( Free On Board )</option>
+                <option value="FOB Jetty / Tongkang (Laut)">FOT ( Free On Truck )</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="rfq-lokasi">Lokasi Tujuan Proyek / Pelabuhan Bongkar *</label>
+            <label for="rfq-lokasi">Lokasi Tujuan / Pelabuhan Bongkar *</label>
             <input type="text" id="rfq-lokasi" placeholder="Contoh: Kawasan Industri Cilegon / Jetty Bojonegara" required />
           </div>
 
@@ -1152,7 +1151,7 @@
       modal.classList.remove('active');
     }
 
-    // 4. Proteksi Password Legalitas (FLA2026)
+  // 4. Proteksi Password Legalitas (FLA2026)
     const DRIVE_URL = 'https://drive.google.com/drive/folders/1B81N4k9otoBq4g-4LDlwUjpqjZgncW_Z?usp=sharing';
 
     function bukaModalPassword() {
@@ -1186,8 +1185,10 @@
       if (input === 'FLA2026') {
         tutupModalPassword();
         document.getElementById('lock-status-icon').innerHTML = '&#128275;';
-        document.getElementById('unlocked-drive-box').classList.add('show');
-        window.open(DRIVE_URL, '_blank', 'noopener,noreferrer');
+        const tabBaru = window.open(DRIVE_URL, '_blank');
+        if (!tabBaru) {
+          window.location.href = DRIVE_URL;
+        }
       } else {
         document.getElementById('pw-error').style.display = 'block';
       }
