@@ -28,6 +28,99 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+    body.lock-scroll {
+      overflow: hidden;
+    }
+
+    /* ===== WELCOME SCREEN (LAYAR PEMBUKA) ===== */
+    #welcome-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      border-top: 6px solid var(--primary);
+      border-bottom: 6px solid var(--accent);
+      transition: opacity 0.55s ease, visibility 0.55s ease;
+    }
+    #welcome-screen.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .welcome-inner {
+      max-width: 480px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp 0.7s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .welcome-logo {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    .welcome-divider {
+      width: 64px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 99px;
+      margin-bottom: 18px;
+    }
+    .welcome-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+    .welcome-subtitle strong {
+      color: var(--primary-dark);
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+    .btn-enter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(20, 99, 56, 0.25);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-enter:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(20, 99, 56, 0.32);
+    }
+    .btn-enter:active {
+      transform: translateY(0);
+    }
+    .welcome-note {
+      margin-top: 14px;
+      font-size: 0.76rem;
+      color: #9ca3af;
+    }
 
     .container {
       width: 100%;
@@ -534,19 +627,42 @@
       .hero-btns { flex-direction: column; }
       .hero-btns .btn { width: 100%; }
       .media-box { height: 210px; }
+      .welcome-logo { max-width: 280px; }
     }
 
     /* ===== PRINT / PDF COMPANY PROFILE MODE ===== */
     @media print {
-      .topbar, header, .mobile-nav, .no-print, #kontak, .zoom-badge { display: none !important; }
-      body { background: #fff; font-size: 11pt; }
+      #welcome-screen, .topbar, header, .mobile-nav, .no-print, #kontak, .zoom-badge { display: none !important; }
+      body { background: #fff; font-size: 11pt; overflow: visible !important; }
       section { padding: 20px 0; }
       .hero { padding: 28px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .card, .product-card, .lock-card { break-inside: avoid; }
     }
   </style>
 </head>
-<body>
+<body class="lock-scroll">
+
+  <!-- ================= WELCOME SCREEN (LOGO + TOMBOL MASUK FULLSCREEN) ================= -->
+  <div id="welcome-screen">
+    <div class="welcome-inner">
+      <img
+        src="logo.png"
+        alt="Logo PT. Farafa Lestari Abadi"
+        class="welcome-logo"
+        onerror="this.outerHTML='<div style=\'margin-bottom:18px;\'><strong style=\'display:block;font-size:1.5rem;color:#146338;\'>PT. FARAFA LESTARI ABADI</strong><span style=\'color:#78b833;font-weight:600;\'>Tumbuh untuk Masa Depan</span></div>'"
+      />
+      <div class="welcome-divider"></div>
+      <p class="welcome-subtitle">
+        <strong>Mitra Pengadaan &amp; Distribusi Material Konstruksi</strong>
+        Batu Split • Screening • Sirdam • Batu Scrop<br />
+        Area Operasional Pulo Ampel – Bojonegara, Banten (Darat &amp; Laut)
+      </p>
+      <button type="button" class="btn-enter" onclick="masukWebsite()">
+        MASUK &rarr;
+      </button>
+      <span class="welcome-note">Klik Masuk untuk tampilan layar penuh</span>
+    </div>
+  </div>
 
   <!-- ================= TOP BAR HARI, TANGGAL & JAM BERDETAK ================= -->
   <div class="topbar">
@@ -852,8 +968,6 @@
               <option value="Batu Split 5-7"></option>
               <option value="Batu Screening"></option>
               <option value="Sirdam"></option>
-              <option value="BaseCoarse A"></option>
-              <option value="BaseCoarse B"></option>
               <option value="Batu Scrop"></option>
             </datalist>
           </div>
@@ -866,8 +980,8 @@
               <label for="rfq-skema">Skema Pengiriman *</label>
               <select id="rfq-skema">
                 <option value="Franco Lokasi Proyek (Darat)">Franco Lokasi Proyek (Darat)</option>
-                <option value="FOB Quarry / Ex-Stockpile">FOB ( Free On Board )</option>
-                <option value="FOB Jetty / Tongkang (Laut)">FOT ( Free On Truck )</option>
+                <option value="FOB Quarry / Ex-Stockpile">FOB Quarry / Ex-Stockpile</option>
+                <option value="FOB Jetty / Tongkang (Laut)">FOB Jetty / Tongkang (Laut)</option>
               </select>
             </div>
           </div>
@@ -971,6 +1085,22 @@
 
   <!-- ================= JAVASCRIPT INTERAKTIF ================= -->
   <script>
+    // 0. Welcome Screen & Masuk ke Layar Penuh (Fullscreen)
+    function masukWebsite() {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen().catch(() => {});
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+
+      const welcome = document.getElementById('welcome-screen');
+      welcome.classList.add('hide');
+      document.body.classList.remove('lock-scroll');
+    }
+
     // 1. Hari, Tanggal & Jam Berdetak Real-Time
     function updateJam() {
       const sekarang = new Date();
@@ -1116,9 +1246,7 @@
       const subjek = `Permintaan Penawaran Harga (${material}) - ${nama}`;
       const isi = susunPesanPenawaran();
 
-      // Link Gmail Web (untuk browser laptop/PC)
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailTujuan)}&su=${encodeURIComponent(subjek)}&body=${encodeURIComponent(isi)}`;
-      // Link Aplikasi Email Default (untuk HP / Outlook)
       const mailtoUrl = `mailto:${emailTujuan}?subject=${encodeURIComponent(subjek)}&body=${encodeURIComponent(isi)}`;
 
       document.getElementById('btn-gmail-web').href = gmailUrl;
